@@ -2,12 +2,12 @@
 -export([f/0]).
 
 f()->
-	Animals = [{dog, 20}, {cat, 4}, {human, 73}, {orangutan, 40}, {meduse, 9}, {godzilla, 2000000}],
-	iterate(Animals).
+	Numbers = [1,7,5,9,3,0,12],
+	iterate(Numbers).
 
 
-iterate([{Type, Weight}|T])->
-	io:format("type: ~w ~w~n", [Type, Weight]),
+iterate([H|T])->
+	io:format("~w ~n", [H]),
 	iterate(T);
 iterate([])->
 	io:format("list is reached~n").
