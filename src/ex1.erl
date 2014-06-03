@@ -2,8 +2,8 @@
 -export([f/0]).
 
 f()->
-	String = 'this is string',
-	io:format("1. ~w~n",[String]),	
+	String = "this is strings",
+	io:format("1. ~s~n",[String]),	
 	Var = 34,
 	io:format("2. ~w~n",[Var]),
 	Tuple = {78, 23},
