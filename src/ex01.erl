@@ -10,8 +10,8 @@ f()->
 	io:format("3. ~w~n",[Tuple]),
 	Atom = atomvalue,
 	io:format("4. ~w~n",[Atom]),
-	Array = [45,68,23,9],
-	io:format("5. ~w~n",[Array]).
+	List = [45,68,23,9],
+	io:format("5. ~w~n",[List]).
 
 
 
