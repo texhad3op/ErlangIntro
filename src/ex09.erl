@@ -2,17 +2,14 @@
 -export([f/0]).
 
 f()->
-	Figures = [{rectangle, 2, 10}, {square, 7}, {square, 9}, {circle, 5} ],
-	calculate_areas(Figures).
-
-calculate_areas([H|T])->
-	io:format("~w~n",[area(H)]),
-	calculate_areas(T);
-calculate_areas([])->
-	io:format("list end is reached").
+	Animals = [{dog, 20}, {cat, 4}, {human, 73}, {orangutan, 40}, {meduse, 9}, {godzilla, 2000000}],
+	Total = calculate_sum(Animals),
+ 	io:format("Total: ~w~n", [Total]).
 
 
-
-area({rectangle, Width, Height}) -> Width * Height;
-area({square, Length}) -> Length * Length;
-area({circle, Radius}) -> 3.14159 * Radius * Radius.
+calculate_sum([List])->
+ 	calculate_sum(List, 0).
+calculate_sum([{Type, Weight}|T], Total)->
+ 	calculate_sum(T, Total + Weight);
+calculate_sum([], Total)->
+	Total.

@@ -2,13 +2,11 @@
 -export([f/0]).
 
 f()->
-	sum([8,5,3]).
+	Numbers = [1,7,5,9,3,0,12],
+	iterate(Numbers).
 
-sum([])->
-	0;
-sum([H|T])->
-	H + sum(T).
-	
-	
-
-
+iterate([H|T])->
+	io:format("~w ~n", [H]),
+	iterate(T);
+iterate([])->
+	io:format("list end is reached~n").

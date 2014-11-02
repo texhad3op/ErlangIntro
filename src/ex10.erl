@@ -13,4 +13,3 @@ function_in_thread()->
 			io:format("it's works!"),
 			function_in_thread()
 	end.
-

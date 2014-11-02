@@ -2,10 +2,10 @@
 -export([f/0]).
 
 f()->
-	Numbers = [1,7,5,9,3,0,12],
-	[H|T] = Numbers,
-	io:format("List head: ~w~n",[H]),
-	io:format("List tail: ~w~n",[T]).
-
-
-
+	Tuple1 = {recatngle, 30, 10},
+	{_, W, _} = Tuple1,
+	io:format("width: ~w~n",[W]),
+	
+	Human = {{age, 2004}, {position, developer}},
+	{{_, _}, {_, Position}} = Human,
+	io:format("position: ~w~n",[Position]).

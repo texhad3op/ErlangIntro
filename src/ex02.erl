@@ -2,14 +2,20 @@
 -export([f/0]).
 
 f()->
-	Tuple1 = {recatngle, 30, 10},
-	{_, W, _} = Tuple1,
-	io:format("width: ~w~n",[W]),
+	Var = 34,
+	io:format("1. ~p~n",[Var]),
 	
-	Human = {{age, 2004}, {position, developer}},
-	{{_, _}, {_, Position}} = Human,
-	io:format("position: ~w~n",[Position]).
+	Atom = atomvalue,
+	io:format("2. ~p~n",[Atom]),
 	
+	List = [45,68,23,9],
+	io:format("3. ~p~n",[List]),
+	
+	Tuple = {78, 23},
+	io:format("4. ~p~n",[Tuple]),
+	
+	String = "this is strings",
+	io:format("5. ~s~n",[String]).	
 
 
 

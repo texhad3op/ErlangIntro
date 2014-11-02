@@ -1,12 +1,27 @@
 -module(ex11).
--export([f/0]).
+-export([start/0, thread_func1/0, thread_func2/0]).
 
-f()->
-	F = fun (X) -> X*X end,
-	map(F, [1,2,3,4,5]).
+start()->
+	Pid1 = spawn(thr, thread_func1,[]),
+	Pid2 = spawn(thr, thread_func2,[]),	
+	Pid1 ! {Pid2, ok}.
 
-
-map(F,[H|T])->
-	[F(H)| map(F, T)];
-map(_,[])->
-	[].
+	
+thread_func1()->
+	receive
+		{SenderPid,ok} -> io:format("~n got ok! from ~p", [SenderPid]),
+						  SenderPid ! {self(), ret},
+						  thread_func1();
+		_Other -> io:format("Something wrong1!"),
+		       thread_func1()
+	end.
+	
+	
+thread_func2()->
+	receive
+		{SenderPid, ret} -> io:format("~ngot answer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"),
+						  thread_func2();
+		_Other -> io:format("Something wrong2!"),
+		       thread_func2()
+		
+	end.	

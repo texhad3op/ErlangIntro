@@ -11,4 +11,3 @@ iterate([{Type, Weight}|T])->
 	iterate(T);
 iterate([])->
 	io:format("list end is reached~n").
-

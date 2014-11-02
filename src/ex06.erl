@@ -1,16 +1,11 @@
 -module(ex06).
-
--export([f/0, function_in_thread/0]).
+-export([f/0]).
 
 f()->
-	Pid = spawn(echo2, function_in_thread, []),
-	Pid ! {work}.
+	sum([8,5,3]).
 
-
-function_in_thread()->
-	receive
-		{work} ->
-			io:format("it's works!"),
-			function_in_thread()
-	end.
-
+sum([])->
+	0;
+sum([H|T])->
+	H + sum(T).
+	
