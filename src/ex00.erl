@@ -1,3 +1,5 @@
+% simple quick sort 
+
 -module(ex00).
 -export([f/0]).
 

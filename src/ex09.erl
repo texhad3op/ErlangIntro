@@ -9,7 +9,7 @@ f()->
 
 calculate_sum([List])->
  	calculate_sum(List, 0).
-calculate_sum([{Type, Weight}|T], Total)->
+calculate_sum([{_Type, Weight}|T], Total)->
  	calculate_sum(T, Total + Weight);
 calculate_sum([], Total)->
 	Total.

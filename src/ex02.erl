@@ -1,3 +1,5 @@
+% Erlang data types
+
 -module(ex02).
 -export([f/0]).
 

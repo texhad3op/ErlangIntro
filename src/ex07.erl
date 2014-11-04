@@ -1,3 +1,5 @@
+% Recursion
+
 -module(ex07).
 -export([f/0]).
 
@@ -7,7 +9,7 @@ f()->
 
 
 iterate([{Type, Weight}|T])->
-	io:format("type: ~w ~w~n", [Type, Weight]),
+	io:format("type: ~p ~p~n", [Type, Weight]),
 	iterate(T);
 iterate([])->
 	io:format("list end is reached~n").

@@ -1,3 +1,5 @@
+% Pattern matching
+
 -module(ex04).
 -export([f/0]).
 

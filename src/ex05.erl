@@ -1,3 +1,5 @@
+% Recursion
+
 -module(ex05).
 -export([f/0]).
 
@@ -6,7 +8,7 @@ f()->
 	iterate(Numbers).
 
 iterate([H|T])->
-	io:format("~w ~n", [H]),
+	io:format("~p ~n", [H]),
 	iterate(T);
 iterate([])->
 	io:format("list end is reached~n").
