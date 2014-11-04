@@ -6,7 +6,7 @@ f()->
 	calculate_areas(Figures).
 
 calculate_areas([H|T])->
-	io:format("~w~n",[area(H)]),
+	io:format("~p~n",[area(H)]),
 	calculate_areas(T);
 calculate_areas([])->
 	io:format("list end is reached").
