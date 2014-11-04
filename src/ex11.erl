@@ -9,19 +9,14 @@ start()->
 	
 thread_func1()->
 	receive
-		{SenderPid,ok} -> io:format("~n got ok! from ~p", [SenderPid]),
-						  SenderPid ! {self(), ret},
-						  thread_func1();
-		_Other -> io:format("Something wrong1!"),
-		       thread_func1()
+		{SenderPid, ok} -> io:format("~ngot message from ~p", [SenderPid]),
+						   SenderPid ! {self(), ret},
+						   thread_func1()
 	end.
 	
 	
 thread_func2()->
 	receive
-		{SenderPid, ret} -> io:format("~ngot answer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"),
-						  thread_func2();
-		_Other -> io:format("Something wrong2!"),
-		       thread_func2()
-		
+		{SenderPid, ret} -> io:format("~ngot answer"),
+						    thread_func2()
 	end.	
