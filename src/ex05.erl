@@ -11,4 +11,4 @@ iterate([H|T])->
 	io:format("~p ~n", [H]),
 	iterate(T);
 iterate([])->
-	io:format("list end is reached~n").
+	io:format("list's end is reached~n").
