@@ -12,4 +12,4 @@ iterate([{Type, Weight}|T])->
 	io:format("type: ~p ~p~n", [Type, Weight]),
 	iterate(T);
 iterate([])->
-	io:format("list's end is reached~n").
+	done.

@@ -10,6 +10,6 @@ f()->
 func_in_thread()->
 	receive
 		work ->
-			io:format("it's working now!"),
+			io:format("it's working!"),
 			func_in_thread()
 	end.

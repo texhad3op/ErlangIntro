@@ -9,7 +9,7 @@ calculate_areas([H|T])->
 	io:format("~p~n",[area(H)]),
 	calculate_areas(T);
 calculate_areas([])->
-	io:format("list's end is reached").
+	done.
 
 
 
