@@ -9,7 +9,7 @@ start()->
 	
 thread_func1()->
 	receive
-		{SenderPid, ok} -> io:format("~ngot message from ~p", [SenderPid]),
+		{SenderPid, ok} -> io:format("~nmessage from ~p", [SenderPid]),
 						   SenderPid ! {self(), ret},
 						   thread_func1()
 	end.
@@ -17,6 +17,6 @@ thread_func1()->
 	
 thread_func2()->
 	receive
-		{SenderPid, ret} -> io:format("~ngot answer"),
+		{SenderPid, ret} -> io:format("~nanswer"),
 						    thread_func2()
 	end.	

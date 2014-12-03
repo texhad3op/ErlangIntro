@@ -24,3 +24,6 @@ f()->
 	Human = {{age, 2004}, {position, developer}},
 	{{_, _}, {_, Position}} = Human,
 	io:format("position: ~p~n",[Position]).
+
+
+

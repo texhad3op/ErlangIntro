@@ -6,10 +6,5 @@ f()->
 	Total = calculate_sum(Animals),
  	io:format("Total: ~p~n", [Total]).
 
-
-calculate_sum(List)->
- 	calculate_sum(List, 0).
-calculate_sum([{_Type, Weight}|T], Total)->
- 	calculate_sum(T, Total + Weight);
-calculate_sum([], Total)->
-	Total.
+calculate_sum([{_Type, Weight}|T]) -> Weight + calculate_sum(T);
+calculate_sum([]) -> 0.
